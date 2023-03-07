@@ -1,0 +1,71 @@
+@import "../../partials/colors";
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  scale: 1.2;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  .select-btn {
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    span {
+      margin-right: 16px;
+      font-weight: 600;
+    }
+  }
+  .options {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    top: 38px;
+    right: 6px;
+    width: 160px;
+    font-weight: 700;
+    a {
+      color: black;
+      padding: 1rem;
+      text-decoration: none;
+      display: block;
+    }
+    a:first-child {
+      font-family: sans-serif;
+    }
+    a:nth-child(2) {
+      font-family: serif;
+      font-size: 18px;
+    }
+    a:last-child {
+      font-family: monospace;
+      font-size: 1rem;
+    }
+  }
+  .show {
+    display: block;
+  }
+}
+
+.separator {
+  height: 20px;
+  width: 2px;
+  background-color: $gray-600;
+}
+
+.moon {
+  scale: 1.1;
+}
