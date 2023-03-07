@@ -1,0 +1,21 @@
+@import "./partials/themes";
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: min(100%, 768px);
+}
+
+.dark {
+  @include dark-theme;
+}
+
+.light {
+  @include light-theme;
+}
