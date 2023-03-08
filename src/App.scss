@@ -19,3 +19,15 @@
 .light {
   @include light-theme;
 }
+
+.sans-serif {
+  @include sans-serif-theme;
+}
+
+.serif {
+  @include serif-theme;
+}
+
+.mono {
+  @include mono-theme;
+}
