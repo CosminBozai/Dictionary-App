@@ -36,7 +36,10 @@ function Header({ setTheme, setFont, font }: Props) {
             <span>{formatString(font)}</span>
             <Arrow />
           </button>
-          <div className={`options ${showOptions ? "show" : ""}`}>
+          <div
+            className={`options ${showOptions ? "show" : ""}`}
+            data-testid="select-menu"
+          >
             <a href="#" onClick={() => changeFont("sans-serif")}>
               Sans Serif
             </a>
