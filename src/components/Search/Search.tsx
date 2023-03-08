@@ -39,7 +39,11 @@ function Search({ setDefinition }: Definiton) {
           className={`search ${empty ? "error" : ""}`}
           ref={inputEl}
         />
-        <SearchIcon className="search-icon" onClick={getDefinition} />
+        <SearchIcon
+          className="search-icon"
+          data-testid="search-btn"
+          onClick={getDefinition}
+        />
       </div>
       <div className="error-msg">
         {empty ? "Whoops, can't be empty..." : ""}
