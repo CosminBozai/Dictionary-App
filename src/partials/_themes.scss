@@ -25,6 +25,11 @@
       stroke: $violet;
     }
   }
+  .search {
+    border: 1px solid $black-300;
+    background-color: $black-300;
+    color: white;
+  }
 }
 
 @mixin light-theme {
@@ -45,6 +50,10 @@
     .moon {
       stroke: $gray-600;
     }
+  }
+  .search {
+    border: 1px solid $gray-200;
+    background-color: $gray-200;
   }
 }
 
