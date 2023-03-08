@@ -47,3 +47,24 @@
     }
   }
 }
+
+@mixin sans-serif-theme {
+  font-family: "Inter", sans-serif;
+  * {
+    font-family: inherit;
+  }
+}
+
+@mixin serif-theme {
+  font-family: "Lora", serif;
+  * {
+    font-family: inherit;
+  }
+}
+
+@mixin mono-theme {
+  font-family: "Inconsolata", monospace;
+  * {
+    font-family: inherit;
+  }
+}

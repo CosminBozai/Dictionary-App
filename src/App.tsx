@@ -5,7 +5,7 @@ import "./App.scss";
 function App() {
   const [theme, setTheme] = useState("light");
   return (
-    <div className={`App ${theme} serif`}>
+    <div className={`App ${theme} mono`}>
       <div className="main-container">
         <Header setTheme={setTheme} />
         {/* Search  */}
