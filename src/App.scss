@@ -4,12 +4,13 @@
   width: 100vw;
   height: 100vh;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 .main-container {
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  width: min(100%, 768px);
+  width: min(100%, 800px);
 }
 
 .dark {
