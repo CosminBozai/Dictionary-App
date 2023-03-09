@@ -30,6 +30,31 @@
     background-color: $black-300;
     color: white;
   }
+  .dictionary-header {
+    .word {
+      color: white;
+    }
+  }
+  .nodef-container {
+    h1 {
+      color: white;
+    }
+  }
+  .meaning-container {
+    border-top: 1px solid $black-500;
+  }
+  .part-of-speech {
+    background-color: $black-900;
+    color: white;
+  }
+  .meaning-text {
+    color: $gray-600;
+  }
+  .definition-list {
+    li {
+      color: white;
+    }
+  }
 }
 
 @mixin light-theme {
@@ -55,6 +80,15 @@
   .search {
     border: 1px solid $gray-200;
     background-color: $gray-200;
+  }
+  .meaning-container {
+    border-top: 1px solid $gray-400;
+  }
+  .part-of-speech {
+    background-color: white;
+  }
+  .meaning-text {
+    color: $gray-600;
   }
 }
 

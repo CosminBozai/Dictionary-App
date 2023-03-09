@@ -2,9 +2,10 @@ import { ReactComponent as SearchIcon } from "../../assets/images/icon-search.sv
 import axios, { AxiosError } from "axios";
 import { useRef, useState } from "react";
 import "./Search.scss";
+import { Word } from "../../interface/Word";
 
 type Definiton = {
-  setDefinition: React.Dispatch<React.SetStateAction<object | null>>;
+  setDefinition: React.Dispatch<React.SetStateAction<null | Word>>;
 };
 
 function Search({ setDefinition }: Definiton) {
@@ -26,7 +27,7 @@ function Search({ setDefinition }: Definiton) {
       setDefinition(res.data[0]);
     } catch (err) {
       const error = err as AxiosError;
-      if (error.code === "404") setDefinition(null);
+      if (error.code === "ERR_BAD_REQUEST") setDefinition({ word: null });
     }
   };
 

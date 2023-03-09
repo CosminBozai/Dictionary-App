@@ -1,14 +1,14 @@
 interface Definition {
-  antonyms: string[];
+  antonyms?: string[];
   definition: string;
-  synonyms: string[];
+  synonyms?: string[];
 }
 
 interface Meaning {
-  antonyms: string[];
+  antonyms?: string[];
   definitions: Definition[];
   partOfSpeech: "noun";
-  synonyms: string[];
+  synonyms?: string[];
 }
 
 interface Word {
@@ -20,4 +20,4 @@ interface Word {
   word: string | null;
 }
 
-export default Word;
+export type { Word, Meaning };

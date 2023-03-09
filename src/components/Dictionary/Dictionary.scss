@@ -1,0 +1,65 @@
+@import "../../partials/colors";
+
+.dictionary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.word {
+  margin-bottom: 6px;
+  font-size: 3.5rem;
+  line-height: 77px;
+  font-weight: 600;
+}
+
+.phonetic {
+  font-size: 1.75rem;
+  color: $violet;
+}
+
+.play-btn {
+  scale: 0.9;
+  path {
+    fill: $violet;
+  }
+  circle {
+    fill: $violet;
+    opacity: 0.25;
+  }
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  path {
+    fill: white;
+  }
+  circle {
+    fill: $violet;
+    opacity: 1;
+  }
+}
+
+// No definition
+.nodef-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  p {
+    line-height: 20px;
+    text-align: center;
+    color: $gray-600;
+  }
+}
+
+.emoji {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}

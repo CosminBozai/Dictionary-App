@@ -1,0 +1,31 @@
+@import "../../partials/colors";
+
+.meaning-container {
+  position: relative;
+  margin-top: 2rem;
+  padding: 2.5rem 1.25rem;
+}
+
+.part-of-speech {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 80px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.meaning-text {
+  margin-bottom: 1.75rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.definition-list {
+  padding: 0 2rem;
+  li {
+    list-style: disc;
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+  }
+}
