@@ -12,7 +12,7 @@ interface Definition {
 interface Meaning {
   antonyms?: string[];
   definitions: Definition[];
-  partOfSpeech: "noun";
+  partOfSpeech: string;
   synonyms?: string[];
 }
 
