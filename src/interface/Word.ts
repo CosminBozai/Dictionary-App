@@ -1,3 +1,8 @@
+interface Audio {
+  text?: string;
+  audio: string;
+}
+
 interface Definition {
   antonyms?: string[];
   definition: string;
@@ -15,7 +20,7 @@ interface Word {
   license?: object;
   meanings?: Meaning[];
   phonetic?: string;
-  phonetics?: object[];
+  phonetics?: Audio[];
   sourceUrls?: string[];
   word: string | null;
 }

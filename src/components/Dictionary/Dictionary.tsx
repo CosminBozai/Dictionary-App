@@ -4,12 +4,29 @@ import Meaning from "../Meaning/Meaning";
 import { v4 as uuidv4 } from "uuid";
 
 import "./Dictionary.scss";
+import { useEffect, useState } from "react";
 
 type Definition = {
   definition: null | Word;
 };
 
 function Dictionary({ definition }: Definition) {
+  const [audioLink, setAudioLink] = useState<string>("");
+
+  useEffect(() => {
+    definition?.phonetics?.forEach((element) => {
+      if (element.audio !== "") {
+        setAudioLink(element.audio);
+        return;
+      }
+    });
+  }, [definition?.phonetics]);
+
+  const playAudio = () => {
+    const audio = new Audio(audioLink);
+    audio.play();
+  };
+
   if (definition == null) {
     return <div></div>;
   } else if (definition.word == null) {
@@ -40,7 +57,7 @@ function Dictionary({ definition }: Definition) {
             <h1 className="word">{definition.word}</h1>
             <p className="phonetic">{definition.phonetic}</p>
           </div>
-          <Play className="play-btn" />
+          <Play className="play-btn" onClick={playAudio} />
         </section>
         {meanings}
       </>
