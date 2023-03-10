@@ -9,7 +9,7 @@ function Meaning({ definitions, partOfSpeech }: Meaning) {
   return (
     <div className="meaning-container">
       <div className="part-of-speech">{partOfSpeech}</div>
-      <div className="meaning-text">Meaning</div>
+      <h2 className="meaning-text">Meaning</h2>
       <ul className="definition-list">{definitionList}</ul>
     </div>
   );

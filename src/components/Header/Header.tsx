@@ -28,16 +28,18 @@ function Header({ setColorTheme, setFontFamily, fontFamily }: Props) {
     <header className="header">
       <Logo className="logo" />
       <div className="header-right">
-        <div className="select">
+        <div className="font-btn-wrapper">
           <button
             onClick={() => setShowFontSelectMenu(!showFontSelectMenu)}
-            className="select-btn"
+            className="font-btn"
           >
-            <span>{formatString(fontFamily)}</span>
+            <span className="current-font-name">
+              {formatString(fontFamily)}
+            </span>
             <Arrow />
           </button>
           <div
-            className={`options ${showFontSelectMenu ? "show" : ""}`}
+            className={`font-options-menu ${showFontSelectMenu ? "show" : ""}`}
             data-testid="select-menu"
           >
             <a href="#" onClick={() => changeFontFamily("sans-serif")}>
@@ -52,8 +54,8 @@ function Header({ setColorTheme, setFontFamily, fontFamily }: Props) {
           </div>
         </div>
 
-        <div className="separator"></div>
-        <label className="switch">
+        <div className="separating-line"></div>
+        <label className="color-theme-switch">
           <input type="checkbox" onChange={changeFont} />
           <span className="slider round"></span>
         </label>

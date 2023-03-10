@@ -1,47 +1,46 @@
 @import "../../partials/colors";
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  scale: 1.2;
-}
-
 .header-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 240px;
+  width: 190px;
 }
 
-.select {
+.font-btn-wrapper {
   position: relative;
   display: inline-block;
-  .select-btn {
+  .font-btn {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 120px;
     padding: 0;
     border: none;
-    font-size: 18px;
-    line-height: 24px;
     cursor: pointer;
-    span {
+    .current-font-name {
       margin-right: 10px;
+      font-size: 14px;
+      line-height: 17px;
       font-weight: 700;
       white-space: nowrap;
     }
   }
-  .options {
+
+  .font-options-menu {
     z-index: 1;
     display: none;
     position: absolute;
     top: 38px;
     right: 6px;
     width: 160px;
+    font-size: 14px;
+    line-height: 17px;
     font-weight: 700;
     a {
       color: black;
@@ -57,7 +56,6 @@
     }
     a:last-child {
       font-family: "Inconsolata", monospace;
-      font-size: 18px;
     }
   }
   .show {
@@ -65,12 +63,27 @@
   }
 }
 
-.separator {
-  height: 20px;
-  width: 2px;
-  background-color: $gray-600;
+.separating-line {
+  height: 22px;
+  width: 1px;
 }
 
 .moon {
   scale: 1.1;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    scale: 1.2;
+  }
+
+  .header-right {
+    width: 220px;
+  }
+
+  .current-font-name,
+  .font-options-menu {
+    font-size: 18px !important;
+    line-height: 21px !important;
+  }
 }

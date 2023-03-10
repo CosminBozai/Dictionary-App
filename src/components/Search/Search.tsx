@@ -37,8 +37,8 @@ function Search({ setSearchedWordData }: Props) {
       <div className="search-wrapper">
         <input
           type="search"
-          placeholder="Search for a word"
-          className={`search ${isEmptySearch ? "error" : ""}`}
+          placeholder="Search for any word..."
+          className={`search ${isEmptySearch ? "empty" : ""}`}
           ref={searchbarEl}
         />
         <SearchIcon
@@ -47,7 +47,7 @@ function Search({ setSearchedWordData }: Props) {
           onClick={getWordData}
         />
       </div>
-      <div className="error-msg">
+      <div className="empty-msg">
         {isEmptySearch ? "Whoops, can't be empty..." : ""}
       </div>
     </>

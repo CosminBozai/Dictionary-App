@@ -1,14 +1,62 @@
 @import "./colors";
 
+@mixin light-theme {
+  // Header
+  .font-btn {
+    background-color: white;
+  }
+
+  .font-options-menu {
+    background-color: white;
+    box-shadow: 0px 0px 26px 0px $gray-400;
+    a:hover {
+      color: $violet;
+    }
+  }
+
+  .separating-line {
+    background-color: $gray-400;
+  }
+
+  .slider {
+    background-color: $gray-600;
+  }
+
+  .moon {
+    stroke: $gray-600;
+  }
+
+  // Search Bar
+  .search {
+    border: 1px solid $gray-200;
+    background-color: $gray-200;
+    &::placeholder {
+      color: rgb(200, 200, 200);
+    }
+  }
+
+  // Dictionary
+  .meaning-container {
+    border-top: 1px solid $gray-400;
+  }
+  .part-of-speech {
+    background-color: white;
+  }
+  .meaning-text {
+    color: $gray-600;
+  }
+}
+
 @mixin dark-theme {
   background-color: black;
   // Header
   .header {
-    .select-btn {
+    .font-btn {
       background-color: black;
       color: white;
     }
-    .options {
+
+    .font-options-menu {
       background-color: $black-700;
       box-shadow: 0px 0px 26px 0px $violet;
       a {
@@ -18,77 +66,57 @@
         color: $violet;
       }
     }
+
+    .separating-line {
+      background-color: $gray-400;
+    }
+
     .slider {
       background-color: $violet;
     }
+
     .moon {
       stroke: $violet;
     }
   }
+
+  // Search Bar
   .search {
     border: 1px solid $black-300;
     background-color: $black-300;
     color: white;
   }
+
+  // Dictionary
   .dictionary-header {
     .word {
       color: white;
     }
   }
+
   .nodef-container {
     h1 {
       color: white;
     }
   }
+
   .meaning-container {
     border-top: 1px solid $black-500;
   }
+
   .part-of-speech {
     background-color: $black-900;
     color: white;
   }
+
   .meaning-text {
     color: $gray-600;
   }
+
   .definition-list {
     li {
       color: white;
     }
-  }
-}
-
-@mixin light-theme {
-  // Header
-  .header {
-    .select-btn {
-      background-color: white;
-    }
-    .options {
-      background-color: white;
-      box-shadow: 0px 0px 26px 0px $gray-400;
-      a:hover {
-        color: $violet;
-      }
-    }
-    .slider {
-      background-color: $gray-600;
-    }
-    .moon {
-      stroke: $gray-600;
-    }
-  }
-  .search {
-    border: 1px solid $gray-200;
-    background-color: $gray-200;
-  }
-  .meaning-container {
-    border-top: 1px solid $gray-400;
-  }
-  .part-of-speech {
-    background-color: white;
-  }
-  .meaning-text {
-    color: $gray-600;
   }
 }
 

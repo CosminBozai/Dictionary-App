@@ -10,15 +10,16 @@
   position: absolute;
   top: -12px;
   left: 0;
-  width: 80px;
-  font-size: 1.25rem;
+  width: 60px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 600;
 }
 
 .meaning-text {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   font-size: 18px;
-  font-weight: 500;
+  line-height: 24px;
 }
 
 .definition-list {
@@ -27,5 +28,27 @@
     list-style: disc;
     margin-bottom: 1.25rem;
     font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  .part-of-speech {
+    top: -14px;
+    width: 70px;
+    font-size: 21px;
+    line-height: 26px;
+  }
+
+  .meaning-text {
+    font-size: 21px;
+    line-height: 26px;
+  }
+
+  .definition-list {
+    li {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 }
