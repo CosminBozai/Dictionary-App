@@ -7,21 +7,21 @@ import "./Header.scss";
 import "./Switch.scss";
 
 type Props = {
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-  setFont: React.Dispatch<React.SetStateAction<string>>;
-  font: string;
+  setColorTheme: React.Dispatch<React.SetStateAction<string>>;
+  setFontFamily: React.Dispatch<React.SetStateAction<string>>;
+  fontFamily: string;
 };
 
-function Header({ setTheme, setFont, font }: Props) {
-  const [showOptions, setShowOptions] = useState(false);
+function Header({ setColorTheme, setFontFamily, fontFamily }: Props) {
+  const [showFontSelectMenu, setShowFontSelectMenu] = useState(false);
 
-  const changeTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.target.checked === false ? setTheme("light") : setTheme("dark");
+  const changeFont = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.target.checked === false ? setColorTheme("light") : setColorTheme("dark");
   };
 
-  const changeFont = (font: string) => {
-    setFont(font);
-    setShowOptions(false);
+  const changeFontFamily = (fontFamily: string) => {
+    setFontFamily(fontFamily);
+    setShowFontSelectMenu(false);
   };
 
   return (
@@ -30,23 +30,23 @@ function Header({ setTheme, setFont, font }: Props) {
       <div className="header-right">
         <div className="select">
           <button
-            onClick={() => setShowOptions(!showOptions)}
+            onClick={() => setShowFontSelectMenu(!showFontSelectMenu)}
             className="select-btn"
           >
-            <span>{formatString(font)}</span>
+            <span>{formatString(fontFamily)}</span>
             <Arrow />
           </button>
           <div
-            className={`options ${showOptions ? "show" : ""}`}
+            className={`options ${showFontSelectMenu ? "show" : ""}`}
             data-testid="select-menu"
           >
-            <a href="#" onClick={() => changeFont("sans-serif")}>
+            <a href="#" onClick={() => changeFontFamily("sans-serif")}>
               Sans Serif
             </a>
-            <a href="#" onClick={() => changeFont("serif")}>
+            <a href="#" onClick={() => changeFontFamily("serif")}>
               Serif
             </a>
-            <a href="#" onClick={() => changeFont("mono")}>
+            <a href="#" onClick={() => changeFontFamily("mono")}>
               Mono
             </a>
           </div>
@@ -54,7 +54,7 @@ function Header({ setTheme, setFont, font }: Props) {
 
         <div className="separator"></div>
         <label className="switch">
-          <input type="checkbox" onChange={changeTheme} />
+          <input type="checkbox" onChange={changeFont} />
           <span className="slider round"></span>
         </label>
         <Moon className="moon" />

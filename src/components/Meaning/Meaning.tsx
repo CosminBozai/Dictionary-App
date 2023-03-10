@@ -1,4 +1,4 @@
-import { Meaning, Word } from "../../interface/Word";
+import { Meaning } from "../../interface/Word";
 import { v4 as uuidv4 } from "uuid";
 import "./Meaning.scss";
 

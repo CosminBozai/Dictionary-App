@@ -1,33 +1,34 @@
 import { ReactComponent as SearchIcon } from "../../assets/images/icon-search.svg";
 import axios, { AxiosError } from "axios";
 import { useRef, useState } from "react";
-import "./Search.scss";
 import { Word } from "../../interface/Word";
+import "./Search.scss";
 
-type Definiton = {
-  setDefinition: React.Dispatch<React.SetStateAction<null | Word>>;
+type Props = {
+  setSearchedWordData: React.Dispatch<React.SetStateAction<null | Word>>;
 };
 
-function Search({ setDefinition }: Definiton) {
-  const [empty, setEmpty] = useState(false);
-  const inputEl = useRef<HTMLInputElement>(null);
+function Search({ setSearchedWordData }: Props) {
+  const [isEmptySearch, setIsEmptySearch] = useState(false);
+  const searchbarEl = useRef<HTMLInputElement>(null);
 
-  const getDefinition = async () => {
-    setEmpty(false);
+  const getWordData = async () => {
+    setIsEmptySearch(false);
 
-    const word = inputEl.current?.value;
+    const word = searchbarEl.current?.value;
     if (word == "") {
-      setEmpty(true);
-      return;
+      return setIsEmptySearch(true);
     }
     try {
       const res = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
       );
-      setDefinition(res.data[0]);
+      setSearchedWordData(res.data[0]);
     } catch (err) {
       const error = err as AxiosError;
-      if (error.code === "ERR_BAD_REQUEST") setDefinition({ word: null });
+      // setting word: null means that the Dictionary component knows that the search came empty...
+      // ... rather than no search have been made at all
+      if (error.code === "ERR_BAD_REQUEST") setSearchedWordData({ word: null });
     }
   };
 
@@ -37,17 +38,17 @@ function Search({ setDefinition }: Definiton) {
         <input
           type="search"
           placeholder="Search for a word"
-          className={`search ${empty ? "error" : ""}`}
-          ref={inputEl}
+          className={`search ${isEmptySearch ? "error" : ""}`}
+          ref={searchbarEl}
         />
         <SearchIcon
           className="search-icon"
           data-testid="search-btn"
-          onClick={getDefinition}
+          onClick={getWordData}
         />
       </div>
       <div className="error-msg">
-        {empty ? "Whoops, can't be empty..." : ""}
+        {isEmptySearch ? "Whoops, can't be empty..." : ""}
       </div>
     </>
   );

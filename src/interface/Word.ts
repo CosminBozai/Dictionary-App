@@ -1,5 +1,5 @@
 interface Audio {
-  text?: string;
+  text: string;
   audio: string;
 }
 
