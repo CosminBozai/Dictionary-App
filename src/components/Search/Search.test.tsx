@@ -4,8 +4,8 @@ import userEvent from "@testing-library/user-event";
 import Search from "./Search";
 
 const MockApp = () => {
-  const [definiton, setDefinition] = useState<object | null>({});
-  return <Search setDefinition={setDefinition} />;
+  const [searchedWordData, setSearchedWordData] = useState<object | null>({});
+  return <Search setSearchedWordData={setSearchedWordData} />;
 };
 
 describe("Error handling when user submits an empty field", () => {
@@ -17,11 +17,11 @@ describe("Error handling when user submits an empty field", () => {
     const errorMsg = screen.getByText("Whoops, can't be empty...");
     expect(errorMsg).toBeInTheDocument();
   });
-  it("error class is applied to the search bar", async () => {
+  it("empty  class is applied to the search bar", async () => {
     render(<MockApp />);
     const searchBtn = screen.getByTestId("search-btn");
     const inputEl = screen.getByRole("searchbox");
     await user.click(searchBtn);
-    expect(inputEl).toHaveClass("error");
+    expect(inputEl).toHaveClass("empty");
   });
 });

@@ -4,9 +4,15 @@ import userEvent from "@testing-library/user-event";
 import Header from "./Header";
 
 const MockApp = () => {
-  const [theme, setTheme] = useState("light");
-  const [font, setFont] = useState("sans-serif");
-  return <Header setTheme={setTheme} font={font} setFont={setFont} />;
+  const [colorTheme, setColorTheme] = useState("light");
+  const [fontFamily, setFontFamily] = useState("sans-serif");
+  return (
+    <Header
+      setColorTheme={setColorTheme}
+      fontFamily={fontFamily}
+      setFontFamily={setFontFamily}
+    />
+  );
 };
 
 const user = userEvent.setup();
