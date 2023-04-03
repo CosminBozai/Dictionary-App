@@ -21,7 +21,7 @@ The Dictionary app is a powerful tool that allows users to search for word defin
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://dictionary-app-gamma-eight.vercel.app/)
 
 ### Built with
 
